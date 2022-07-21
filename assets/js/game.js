@@ -17,7 +17,7 @@ var fight = function (enemy) {
     );
 
     //If player picks "skip" confirm and then stop the loop
-    if (promptFight === "skip" || promptFight === "SKIP"){
+    if (promptFight.toLowerCase === "skip"){
       
       //confirm player wants to skip
       var confirmSkip = window.confirm("Are you sure you'd like to quit?");
@@ -155,18 +155,15 @@ var shop = function(){
   );
 
   //Use switch to carry out action
-  switch (shopOptionPrompt) {
-    case "REFILL":
+  switch (shopOptionPrompt.toLowerCase) {
     case "refill":
       playerInfo.refillHealth();
       break;
 
-    case "UPGRADE":
     case "upgrade":
       playerInfo.upgradeAttack();
       break;
-
-    case "LEAVE":  
+ 
     case "leave":
       window.alert("Leaving the store.");
 
